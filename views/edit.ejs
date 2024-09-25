@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Song</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #252323;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #090909;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #57ba64;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="file"],
+        button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #129530;
+            color: rgb(26, 25, 25);
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        a {
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            color: #0f0f10;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Song</h1>
+        <form action="/edit/<%= song.id %>" method="POST" enctype="multipart/form-data">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="<%= song.title %>" required>
+            <label for="artist">Artist:</label>
+            <input type="text" id="artist" name="artist" value="<%= song.artist %>" required>
+            <p>Current Audio File: <%= song.filename %></p>
+            <label for="audioFile">Upload New Audio File (optional):</label>
+            <input type="file" id="audioFile" name="audioFile" accept="audio/*">
+            <button type="submit">Update Song</button>
+        </form>
+        <a href="/">Back to Playlist</a>
+    </div>
+</body>
+</html>

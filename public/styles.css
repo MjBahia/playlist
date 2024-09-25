@@ -1,0 +1,47 @@
+/* public/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: rgb(96, 203, 130);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+}
+
+h1 {
+    color: #044a21;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgb(148, 212, 173); /* Set the table background to white */
+}
+
+th, td {
+    border: 1px solid #0a5036;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #0de122;
+}
+
+tr:hover {
+    background-color: #10e77b;
+}
+
+a {
+    display: block;
+    margin: 20px 0;
+}
+
+.box {
+    background-color: rgb(10, 67, 8); 
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
